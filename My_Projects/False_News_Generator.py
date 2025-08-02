@@ -17,7 +17,7 @@ action_list = [
     "Eats Momos",
     "Move by train",
     "launces",
-    "Dances ",
+    "Dances",
     "fights"
 ]
 
@@ -36,19 +36,23 @@ while True:
     action = random.choice(action_list)
     place_or_thing = random.choice(places_or_things_list)
 
-    print( 5*"#"," FunDay NewsPaper ",5*"#")
+    print("\n",10*"#"," FunDay NewsPaper ",10*"#")
     headline = f"\nBREAKING NEWS: {subject} {action} {place_or_thing}."
     print(headline)
 
-    save_headline = input("\nDo you like to save it?(Yes/No): ").strip().lower()
-    save = []
-    if save_headline == "y" or "yes":
-        with open("save_my_headlines.txt","w") as f:
-            save.append(headline)
+    save_headline = input("\nDo you like to save it?(Y/N): ").strip().lower()
+    # save = []
+    if save_headline == "y":
+        # save.append(headline)
+        with open("save_my_headlines.txt","a") as f:
+            f.write(headline+"\n")
+        print("Saved")
+    else:
+        print("Not Saved")
 
-    new_headline = input("\nDo you want to read another funny fake headline?(Yes/No): ").strip().lower()
-    if new_headline == "no":
+    new_headline = input("\nDo you want to read another funny fake headline?(Y/N): ").strip().lower()
+    if new_headline == "n":
         break
 
-print("### Thanks For Reading Our FunDay NewsPaper ####")
+print("\n### Thanks For Reading Our FunDay NewsPaper ####\n")
 
