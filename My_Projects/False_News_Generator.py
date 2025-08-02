@@ -43,7 +43,7 @@ while True:
     save_headline = input("\nDo you like to save it?(Yes/No): ").strip().lower()
     save = []
     if save_headline == "y" or "yes":
-        with open("save_my_headlines","w") as f:
+        with open("save_my_headlines.txt","w") as f:
             save.append(headline)
 
     new_headline = input("\nDo you want to read another funny fake headline?(Yes/No): ").strip().lower()
