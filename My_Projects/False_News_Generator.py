@@ -37,8 +37,14 @@ while True:
     place_or_thing = random.choice(places_or_things_list)
 
     print( 5*"#"," FunDay NewsPaper ",5*"#")
-    headline = f"BREAKING NEWS: {subject} {action} {place_or_thing}."
-    print(  headline)
+    headline = f"\nBREAKING NEWS: {subject} {action} {place_or_thing}."
+    print(headline)
+
+    save_headline = input("\nDo you like to save it?(Yes/No): ").strip().lower()
+    save = []
+    if save_headline == "y" or "yes":
+        with open("save_my_headlines","w") as f:
+            save.append(headline)
 
     new_headline = input("\nDo you want to read another funny fake headline?(Yes/No): ").strip().lower()
     if new_headline == "no":
